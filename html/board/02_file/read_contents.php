@@ -7,10 +7,10 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
 echo get_contents($id);
 	
 function get_contents($id){
-	$hostname = 'localhost';
-	$username = 'root';
-	$password = '1234';
-	$dbname = 'swoh';
+	$hostname = 'kocia.cytzyor3ndjk.ap-northeast-2.rds.amazonaws.com';
+	$username = 'SWOH';
+	$password = 'password';
+	$dbname = 'SWOH';
 	$conn = mysqli_connect($hostname,$username,$password,$dbname);
 	if(!$conn) {
 		die('MySQL Connection failed:' . mysqli_connect_error);

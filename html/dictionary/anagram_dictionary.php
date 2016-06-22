@@ -75,5 +75,5 @@ function print_array($array){
 	}
 }
 ?>
-
-<a href = "/SWOH/html/index.html"> 메인으로 돌아가기 </a>
+<a href = "/dictionary/index.php"> 사전으로 돌아가기 </a> <br>
+<a href = "/index.html"> 메인으로 돌아가기 </a>

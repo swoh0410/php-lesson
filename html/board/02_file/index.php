@@ -23,11 +23,12 @@
 		<tr> <th>No.</th><th>Writer</th><th>Title</th></tr>
 
 <?php
-	$hostname = 'localhost';
-	$username = 'root';
-	$password = '1234';
-	$dbname = 'swoh';
+	$hostname = 'kocia.cytzyor3ndjk.ap-northeast-2.rds.amazonaws.com';
+	$username = 'SWOH';
+	$password = 'password';
+	$dbname = 'SWOH';
 	$conn = mysqli_connect($hostname, $username, $password, $dbname);
+	mysqli_query($conn,"SET NAMES 'utf8'");
 	if (!$conn) {
 		die('Mysql connection failed: '.mysqli_connect_error());
 	} 	
@@ -39,7 +40,7 @@
 	while($row = mysqli_fetch_assoc($result)) {
 		echo "<tr><td> <a href = 'read_contents.php?id=" . $row['identification_number']."'>" . $row['identification_number'] ."</a>"."</td>" .		"<td>" . $row['name'] . "</td>" .
 			"<td> <a href = 'read_contents.php?id=" . $row['identification_number']."'>" . $row['title'] . "</a>". "</td>".
-			"<td>" . "<a href = 'rowDelete.php?id=" .$row['identification_number']."'>". 삭제 . "</td></tr>" ;
+			"<td>" . "<a href = 'rowDelete.php?id=" .$row['identification_number']."'>". "삭제" . "</td></tr>" ;
 	}
 	mysqli_free_result($result);
 	mysqli_close($conn);

@@ -24,6 +24,6 @@
 	<table>
 	<tr> <a href = "anagram_dictionary.php"> 사전에 모든 아나그램 찾기</a> </tr> <br>
 	</table>
-	<a href = "/SWOH/html/index.html"> 메인으로 돌아가기 </a>
+	<a href = "/index.html"> 메인으로 돌아가기 </a>
 </div>
 

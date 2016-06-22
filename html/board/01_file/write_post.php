@@ -14,6 +14,9 @@
 		Contents: <input type = "text" name = "contents"><br>
 		<input type="submit" value="제출">
 	</form>
+	<a href = "/board/01_file/index.php"> 게시판으로 돌아가기 </a> <br>
+	<a href = "/index.html"> 메인으로 돌아가기 </a>
+	
 </div>	
 </body>
 </html>

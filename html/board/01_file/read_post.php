@@ -33,5 +33,6 @@
 		return $rContents;
 	}
 	
-	
 ?>
+<a href = "/board/index.php"> 게시판으로 돌아가기 </a> <br>
+<a href = "/index.html"> 메인으로 돌아가기 </a>

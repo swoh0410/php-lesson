@@ -6,6 +6,6 @@
 		수식: <input type = "text" name = "input"> <br><br>
 		<input type = "submit" value = "계산하기">
 	</form>
-	<a href = "/SWOH/html/index.html"> 메인으로 돌아가기 </a>
+	<a href = "/index.html"> 메인으로 돌아가기 </a>
 </div>
 

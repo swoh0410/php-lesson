@@ -41,6 +41,6 @@ function search_anagram ($word){
 		$line = fgets($fh);
 	}
 }
-
-
 ?>
+<a href = "/dictionary/index.php"> 사전으로 돌아가기 </a> <br>
+<a href = "/index.html"> 메인으로 돌아가기 </a>

@@ -25,10 +25,10 @@ insertDB($name, $title, $contents);
 
 
 function insertDB($name, $title, $contents){
-	$hostname = 'localhost';
-	$username = 'root';
-	$password = '1234';
-	$dbname = 'swoh';
+	$hostname = 'kocia.cytzyor3ndjk.ap-northeast-2.rds.amazonaws.com';
+	$username = 'SWOH';
+	$password = 'password';
+	$dbname = 'SWOH';
 	$conn = mysqli_connect($hostname, $username, $password, $dbname);
 	if (!$conn) {
 		die('Mysql connection failed: '.mysqli_connect_error());
@@ -47,6 +47,6 @@ function insertDB($name, $title, $contents){
 	
 ?>
 </body>
-<a href = "/SWOH/html/board/02_file/index.php"> 게시판으로 돌아가기! </a><br>
-<a href = "/SWOH/html/index.html"> 메인 홈로 돌아가기! </a> 
+<a href = "/board/02_file/index.php"> 게시판으로 돌아가기! </a><br>
+<a href = "/index.html"> 메인 홈로 돌아가기! </a> 
 </html>
