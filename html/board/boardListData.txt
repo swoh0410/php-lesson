@@ -1,0 +1,8 @@
+1	name	title	contents1
+2	이름	제목1	내용
+3	게시판	제목2	내용입니다.
+4	Pu	Tennis	Difficult
+5	Oh	NGU	GUB
+6	저자	제모그21 1	내용요요요용 14214
+7	J.K.Rowling	Harry Potter	a b c 1 가나다 ㅎㅎ
+8	로빈 닉슨	PHP	엄청 긴 책.
