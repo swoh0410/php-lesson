@@ -28,7 +28,7 @@
 	$password = 'password';
 	$dbname = 'SWOH';
 	$conn = mysqli_connect($hostname, $username, $password, $dbname);
-	mysqli_query($conn,"SET NAMES 'utf8'");
+	mysqli_query($conn,"SET NAMES 'utf8'");  //utf8로 인코딩해서 출력. 
 	if (!$conn) {
 		die('Mysql connection failed: '.mysqli_connect_error());
 	} 	
