@@ -12,6 +12,7 @@ function get_contents($id){
 	$password = 'password';
 	$dbname = 'SWOH';
 	$conn = mysqli_connect($hostname,$username,$password,$dbname);
+	mysqli_query($conn,"SET NAMES 'utf8'");  //utf8로 인코딩해서 출력. 
 	if(!$conn) {
 		die('MySQL Connection failed:' . mysqli_connect_error);
 	}
@@ -31,5 +32,5 @@ function get_contents($id){
 ?>
 
 <a href = "index.php"> 게시판으로 돌아가기</a> <br>
-<a href = "/SWOH/html/index.html"> 메인으로 돌아가기 </a>
+<a href = "../../index.html"> 메인으로 돌아가기 </a>
 </html>

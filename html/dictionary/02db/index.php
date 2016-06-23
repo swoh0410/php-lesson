@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Dictionary.txt 파일을 DB에 넣는 일. -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <body>
 <?php

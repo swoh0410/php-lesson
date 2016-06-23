@@ -47,6 +47,6 @@ function insertDB($name, $title, $contents){
 	
 ?>
 </body>
-<a href = "/board/02_file/index.php"> 게시판으로 돌아가기! </a><br>
-<a href = "/index.html"> 메인 홈로 돌아가기! </a> 
+<a href = "index.php"> 게시판으로 돌아가기! </a><br>
+<a href = "../../index.html"> 메인 홈로 돌아가기! </a> 
 </html>

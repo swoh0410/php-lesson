@@ -91,4 +91,4 @@ function findPosition ($wordPosition){
 
 ?>
 <a href = "alphabetical_Order.php"> 알파벳 순으로 보기. </a>
-<a href = "/SWOH/html/index.html"> 메인으로 돌아가기 </a>
+<a href = "../../index.html"> 메인으로 돌아가기 </a>

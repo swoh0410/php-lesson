@@ -16,19 +16,20 @@
 
 <body style = "background-color : black;">
 <h1> 
-<img src = "/image/specs.png" alt="HTML5 Icon" width="50" height="25">
- Oh's Workplace 
-<img src = "/image/specs.png" alt="HTML5 Icon" width="50" height="25"> 
+<!-- 아래는 uploaded_images라는 가상 폴더를 httpd.conf파일에서 설정해서 image file을 불러온 것.  -->
 <img src = "/uploaded_images/specs.png" alt="HTML5 Icon" width="50" height="25"> 
+ Oh's Workplace 
+<img src = "/uploaded_images/specs.png" alt="HTML5 Icon" width="50" height="25"> 
+
 </h1>
 
 
 
 <table align = "left">
 	<tr> <th> PHP 자료들 </th> </tr>
-	<tr> <td><a href = "/board/01_file/index.php"> 게시판 </a> </td></tr>
-	<tr> <td><a href = "/calculator/index.php"> 계산기 </a> </td></tr> 
-	<tr> <td><a href = "/dictionary/index.php"> 사전값 </a> </td></tr>
+	<tr> <td><a href = "./board/01_file/index.php"> 게시판 </a> </td></tr>
+	<tr> <td><a href = "./calculator/index.php"> 계산기 </a> </td></tr> 
+	<tr> <td><a href = "./dictionary/01db/index.php"> 사전값 </a> </td></tr>
 </table>
 
 
@@ -44,7 +45,7 @@
 
 <table align = "left">
 	<tr> <th> DB 자료들 </th> </tr>
-	<tr> <td> <a href = "/board/02_file/index.php"> 게시판 </a> </td></tr>
+	<tr> <td> <a href = "./board/02_file/index.php"> 게시판 </a> </td></tr>
 </table>
 
 </body>

@@ -63,5 +63,5 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 "<font color='red'>Roses are red</font>";
 ?>
 
-<a href = "/dictionary/index.php"> 사전으로 돌아가기 </a> <br>
-<a href = "/index.html"> 메인으로 돌아가기 </a>
+<a href = "index.php"> 사전으로 돌아가기 </a> <br>
+<a href = "../../index.html"> 메인으로 돌아가기 </a>

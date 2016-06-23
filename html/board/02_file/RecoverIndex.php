@@ -56,4 +56,4 @@
 <br>
 
 <a href = "write_post.php"> 글쓰기 </a> <br>
-<a href = "/SWOH/html/index.html"> 메인으로 돌아가기 </a>
+<a href = "../../index.html"> 메인으로 돌아가기 </a>
