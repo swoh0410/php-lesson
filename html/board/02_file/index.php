@@ -18,15 +18,21 @@
 <html>
 <body style = "background-color : black;">
 
-	<h1> 'Main Home' </h1>
-	<table>
-		<tr> <th>No.</th><th>Writer</th><th>Title</th></tr>
+	<h1> 'Table' </h1>
 
 <?php
+	$connInfo = $_SERVER['DOCUMENT_ROOT'] . "/../" . "includes/" . "mylib.php";
+	require_once($connInfo);
 	$hostname = 'kocia.cytzyor3ndjk.ap-northeast-2.rds.amazonaws.com';
 	$username = 'SWOH';
 	$password = 'password';
 	$dbname = 'SWOH';
+	$mysql_conn = get_mysql_connection($hostname,$username,$password,$dbname);
+	require_once('DB_Commands.php');
+	$tableInfoArray = table_read($mysql_conn);
+	table_print($tableInfoArray);
+	
+	/*
 	$conn = mysqli_connect($hostname, $username, $password, $dbname);
 	mysqli_query($conn,"SET NAMES 'utf8'");  //utf8로 인코딩해서 출력. 
 	if (!$conn) {
@@ -44,6 +50,7 @@
 	}
 	mysqli_free_result($result);
 	mysqli_close($conn);
+	*/
 ?>
 
 
