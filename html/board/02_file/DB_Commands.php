@@ -7,8 +7,6 @@ function table_read($conn, $tableName, $board_id = 0){
 	if (!$conn) {
 		die('Mysql connection failed: '.mysqli_connect_error());
 	} 	
-	
-	echo"<br> SSDDS:". $board_id;
 	//board_id의 값이 없으면 DB에 저장된 모든 post들 출력.
 	if($board_id === 0){
 	$select_query = 'SELECT * FROM ' . $tableName ;
@@ -24,7 +22,7 @@ function table_read($conn, $tableName, $board_id = 0){
 	mysqli_free_result($result);
 	return $tableArray;
 }
-
+/*
 function table_print ($tableArray){
 	//Table을 만들기 시작.
 	//Table 헤더를 만드는 작업.
@@ -43,37 +41,11 @@ function table_print ($tableArray){
 			echo "</tr>";
 	}
 	echo "</table>";
-	
-	
 }
 
+*/
 
 /*
-
-function row_read(){
-	$hostname = 'kocia.cytzyor3ndjk.ap-northeast-2.rds.amazonaws.com';
-	$username = 'SWOH';
-	$password = 'password';
-	$dbname = 'SWOH';
-	$conn = mysqli_connect($hostname, $username, $password, $dbname);
-	mysqli_query($conn,"SET NAMES 'utf8'");  //utf8로 인코딩해서 출력. 
-	if (!$conn) {
-		die('Mysql connection failed: '.mysqli_connect_error());
-	} 	
-	$result = mysqli_query($conn, $select_query);
-}
-
-
-
-
-
-
-
-
-function row_add(){
-	
-}
-
 function row_delete (){
 	$commandDelete = "DELETE FROM"
 }

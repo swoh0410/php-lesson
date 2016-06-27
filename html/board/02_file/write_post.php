@@ -14,7 +14,7 @@
 <?php
 	if($_SERVER['REQUEST_METHOD'] === "GET"){
 	$board_id = $_GET["board_id"];
-	}	echo "board id: ". $board_id;
+	}	
 ?>
 <div class="content">
 	<h1>Write Post</h1>
