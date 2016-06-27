@@ -1,3 +1,8 @@
+<head>
+<link rel="stylesheet" type="text/css" href="/directory_css/style_black_white.css">
+</head>
+
+<body>
 <?php
 if($_SERVER["REQUEST_METHOD"] === "POST"){
 	$word = $_POST['word'];
@@ -43,4 +48,5 @@ function search_anagram ($word){
 }
 ?>
 <a href = "index.php"> 사전으로 돌아가기 </a> <br>
-<a href = "../../index.html"> 메인으로 돌아가기 </a>
+<a href = "../../index.html"> 메인으로 돌아가기 </a>\
+</body>

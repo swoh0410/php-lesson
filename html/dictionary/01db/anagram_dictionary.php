@@ -1,3 +1,7 @@
+<head>
+<link rel="stylesheet" type="text/css" href="/directory_css/style_black_white.css">
+</head>
+<body>
 <?php
 /*
 넘겨 받는 정보가 없기 때문에 사실은 필요없음.
@@ -77,3 +81,4 @@ function print_array($array){
 ?>
 <a href = "index.php"> 사전으로 돌아가기 </a> <br>
 <a href = "../../index.html"> 메인으로 돌아가기 </a>
+</body>

@@ -1,52 +1,54 @@
 <!DOCTYPE html>
-<style type="text/css">
-	h1 {text-align : center; color : white; background-color : black;}
-	table{width:25%; border : 2px solid #ededed; border-collapse : collapse; text-align : center;
-		style="float:center";}
-	th {border : 1px solid white; color : white; background-color: black;}
-	td {border : 1px solid white; color : white; background-color: black;}
-	a:link {color : white; text-decoration:none;}
-	a:visited {color : white; text-decoration:none;}
-	a:hover {color : yellow; text-decoration:none;}
-	body {style : black;}
-	
-</style>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <html>
+<head>
+<link rel="stylesheet" type="text/css" href="/directory_css/style_black_white.css">
+</head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
 <body>
 <?php
 if($_SERVER['REQUEST_METHOD'] === "POST"){
 	$name = $_POST["name"];
 	$title = $_POST["title"];
-	$contents = $_POST["contents"];
+	$content = $_POST["content"];
+	$board_id = $_POST["board_id"];
 }
-insertDB($name, $title, $contents);
+insertDB($name, $title, $content,$board_id);
 
 
 
-function insertDB($name, $title, $contents){
+function insertDB($name, $title, $content, $board_id){
+	$connInfo = $_SERVER['DOCUMENT_ROOT'] . "/../" . "includes/" . "mylib.php";
+	require_once($connInfo);
 	$hostname = 'kocia.cytzyor3ndjk.ap-northeast-2.rds.amazonaws.com';
 	$username = 'SWOH';
 	$password = 'password';
 	$dbname = 'SWOH';
-	$conn = mysqli_connect($hostname, $username, $password, $dbname);
-	if (!$conn) {
-		die('Mysql connection failed: '.mysqli_connect_error());
-	} 	
+	$mysql_conn = get_mysql_connection($hostname,$username,$password,$dbname);
+
 	// 단어목록 파일을 DB 에 넣어보자
+	
+	echo "name: " . $name . "<br>"; 
+	echo "title: " . $title . "<br>";
+	echo "content: " . $content . "<br>";
+	echo "board_id: " . $board_id . "<br>";
+	
+	$insert_query = 'INSERT INTO post (name, title, content, board_id) VALUES ("'.$name.'",
+					"'.$title.'","'.$content.'","'.$board_id.'")' ;
 
-	$insert_query = 'INSERT INTO board (name, title, contents) VALUES ("'.$name.'","'.$title.'","'.$contents.'")' ;
-
-	if(mysqli_query ($conn, $insert_query) === false){
-		echo mysqli_error($conn);
+	if(mysqli_query ($mysql_conn, $insert_query) === false){
+		echo mysqli_error($mysql_conn);
+	}else{
+			echo 'DB INSERT: '. $name.' '.$title. ' '.'<br>';
+			echo 'DB INSERT 성공<br>';
 	}
-	echo 'DB INSERT: '. $name.' '.$title. ' '.'<br>';
-	echo 'DB INSERT 성공<br>';
-	mysqli_close($conn);
+
+	mysqli_close($mysql_conn);
 }
 	
 ?>
 </body>
-<a href = "index.php"> 게시판으로 돌아가기! </a><br>
+<a href = "index.php?board_id=<?php echo $board_id?>"> 게시판으로 돌아가기! </a><br>
 <a href = "../../index.html"> 메인 홈로 돌아가기! </a> 
 </html>

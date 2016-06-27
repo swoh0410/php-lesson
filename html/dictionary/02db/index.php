@@ -1,6 +1,12 @@
 <!DOCTYPE html>
-<!-- Dictionary.txt 파일을 DB에 넣는 일. -->
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<head>
+<link rel="stylesheet" type="text/css" href="/directory_css/style_black_white.css">
+</head>
+
+<!-- Dictionary.txt 파일을 DB에 넣는 일. -->
 <body>
 <?php
 	$hostname = 'localhost';

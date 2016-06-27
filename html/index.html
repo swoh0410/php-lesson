@@ -1,25 +1,16 @@
 ﻿
 <html>
 
-<style type="text/css">
-	h1 {text-align : center; color : white; background-color : black;}
-	table{width:25%; border : 2px solid #ededed; border-collapse : collapse; text-align : center;
-		style="float:center";}
-	th {border : 1px solid white; color : white; background-color: black;}
-	td {border : 1px solid white; color : white; background-color: black;}
-	a:link {color : white; text-decoration:none;}
-	a:visited {color : white; text-decoration:none;}
-	a:hover {color : yellow; text-decoration:none;}
-	
-</style>
+<head>
+<link rel="stylesheet" type="text/css" href="/directory_css/style_black_white.css">
+</head>
 
-
-<body style = "background-color : black;">
+<body>
 <h1> 
 <!-- 아래는 uploaded_images라는 가상 폴더를 httpd.conf파일에서 설정해서 image file을 불러온 것.  -->
-<img src = "/uploaded_images/specs.png" alt="HTML5 Icon" width="50" height="25"> 
+<img src = "/directory_image/specs.png" alt="HTML5 Icon" width="50" height="25"> 
  Oh's Workplace 
-<img src = "/uploaded_images/specs.png" alt="HTML5 Icon" width="50" height="25"> 
+<img src = "/directory_image/specs.png" alt="HTML5 Icon" width="50" height="25"> 
 
 </h1>
 
@@ -45,7 +36,9 @@
 
 <table align = "left">
 	<tr> <th> DB 자료들 </th> </tr>
-	<tr> <td> <a href = "./board/02_file/index.php"> 게시판 </a> </td></tr>
+	<tr> <td> <a href = "./board/02_file/index.php?board_id=1"> 한국어 게시판 </a> </td></tr>
+	<tr> <td> <a href = "./board/02_file/index.php?board_id=2"> English Bulletin Board </a> </td></tr>
 </table>
 
 </body>
+

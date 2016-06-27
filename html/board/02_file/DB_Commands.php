@@ -2,26 +2,28 @@
 <?php
 
 //DB에서 table을 읽어와서 Two-Dimentional Array 에 넣고 그 array를 Return. 
-function table_read($conn){
-	mysqli_query($conn,"SET NAMES 'utf8'");  //utf8로 인코딩해서 출력. 
+function table_read($conn, $tableName, $board_id = 0){
+
 	if (!$conn) {
 		die('Mysql connection failed: '.mysqli_connect_error());
 	} 	
 	
-	// DB에서 사용할 query.
-	$select_query = 'SELECT * FROM board';
+	echo"<br> SSDDS:". $board_id;
+	//board_id의 값이 없으면 DB에 저장된 모든 post들 출력.
+	if($board_id === 0){
+	$select_query = 'SELECT * FROM ' . $tableName ;
+	}else{
+	//board_id의 값을 받아와 계시판 구분해서 post를 출력해줌. 
+	$select_query = 'SELECT * FROM ' . $tableName . ' WHERE board_id = ' . $board_id;
+	}
 	// $result에 $connection과 query를 이용한 return값을 넣는다.
 	$result = mysqli_query($conn, $select_query);
 	while(NULL !==($row = mysqli_fetch_assoc($result))) { // $result에서 한줄 읽어와서 $row에 넣는다.
 		$tableArray[] = $row; 
 	}
 	mysqli_free_result($result);
-	mysqli_close($conn);
-	print_r($tableArray);
 	return $tableArray;
-
 }
-
 
 function table_print ($tableArray){
 	//Table을 만들기 시작.

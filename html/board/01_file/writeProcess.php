@@ -1,3 +1,8 @@
+
+<head>
+<link rel="stylesheet" type="text/css" href="/directory_css/style_black_white.css">
+</head>
+
 <?php
 	if($_SERVER['REQUEST_METHOD']  === 'POST'){
 		$name = $_POST['name'];

@@ -1,3 +1,7 @@
+<head>
+<link rel="stylesheet" type="text/css" href="/directory_css/style_black_white.css">
+</head>
+<body>
 <div class = "content">
 	<h1> 값을 찾고싶은 단어를 적으세요. </h1>
 	<form action = "searchResult.php" method = "POST">
@@ -24,4 +28,5 @@
 	<tr> <a href = "anagram_dictionary.php"> 사전에 모든 아나그램 찾기</a> </tr> <br>
 	</table>
 </div>
+</body>
 

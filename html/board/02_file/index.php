@@ -1,18 +1,7 @@
 <!DOCTYPE html>
-<style type="text/css">
-	h1 {text-align : center; color : white; background-color : black;}
-	table{width:25%; border : 2px solid #ededed; border-collapse : collapse; text-align : center;
-		style="float:center";}
-	th {border : 1px solid white; color : white; background-color: black;}
-	td {border : 1px solid white; color : white; background-color: black;}
-	a:link {color : white; text-decoration:none;}
-	a:visited {color : white; text-decoration:none;}
-	a:hover {color : yellow; text-decoration:none;}
-	
-</style>
-
-
-
+<head>
+<link rel="stylesheet" type="text/css" href="/directory_css/style_black_white.css">
+</head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <html>
@@ -21,6 +10,11 @@
 	<h1> 'Table' </h1>
 
 <?php
+	if($_SERVER['REQUEST_METHOD'] === "GET"){
+	$board_id = $_GET["board_id"];
+	}
+	echo "board id: ".$board_id;
+	
 	$connInfo = $_SERVER['DOCUMENT_ROOT'] . "/../" . "includes/" . "mylib.php";
 	require_once($connInfo);
 	$hostname = 'kocia.cytzyor3ndjk.ap-northeast-2.rds.amazonaws.com';
@@ -28,29 +22,11 @@
 	$password = 'password';
 	$dbname = 'SWOH';
 	$mysql_conn = get_mysql_connection($hostname,$username,$password,$dbname);
+
 	require_once('DB_Commands.php');
-	$tableInfoArray = table_read($mysql_conn);
+	$tableInfoArray = table_read($mysql_conn, "post",$board_id);
 	table_print($tableInfoArray);
-	
-	/*
-	$conn = mysqli_connect($hostname, $username, $password, $dbname);
-	mysqli_query($conn,"SET NAMES 'utf8'");  //utf8로 인코딩해서 출력. 
-	if (!$conn) {
-		die('Mysql connection failed: '.mysqli_connect_error());
-	} 	
-	
-	// DB에서 rank가 높은 상위 20개 단어를 출력해 보자
-	$select_query = 'SELECT * FROM board';
-	// select 쿼리는 mysqli_query 함수의 반환값으로 결과를 받는다.
-	$result = mysqli_query($conn, $select_query);
-	while($row = mysqli_fetch_assoc($result)) {
-		echo "<tr><td> <a href = 'read_contents.php?id=" . $row['identification_number']."'>" . $row['identification_number'] ."</a>"."</td>" .		"<td>" . $row['name'] . "</td>" .
-			"<td> <a href = 'read_contents.php?id=" . $row['identification_number']."'>" . $row['title'] . "</a>". "</td>".
-			"<td>" . "<a href = 'rowDelete.php?id=" .$row['identification_number']."'>". "삭제" . "</td></tr>" ;
-	}
-	mysqli_free_result($result);
-	mysqli_close($conn);
-	*/
+	mysqli_close($mysql_conn);
 ?>
 
 
@@ -60,5 +36,5 @@
 
 <br>
 
-<a href = "write_post.php"> 글쓰기 </a> <br>
+<a href = "write_post.php?board_id=<?php echo $board_id?>"> 글쓰기 </a> <br>
 <a href = "../../index.html"> 메인으로 돌아가기 </a>

@@ -1,9 +1,11 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <html>
+
 <head>
-	<link rel="stylesheet" type="text/css" href="/css/mystyle.css">
+<link rel="stylesheet" type="text/css" href="/directory_css/style_black_white.css">
 </head>
+
 <body>
 <div class="content">
 	<h1>Write Post</h1>

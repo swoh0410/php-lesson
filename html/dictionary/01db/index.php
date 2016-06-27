@@ -1,4 +1,7 @@
-
+<head>
+<link rel="stylesheet" type="text/css" href="/directory_css/style_black_white.css">
+</head>
+<body>
 <div class = "content">
 	<h1> 값을 찾고싶은 단어를 적으세요. </h1>
 	<form action = "searchResult.php" method = "POST">
@@ -26,4 +29,4 @@
 	</table>
 	<a href = "../../index.html"> 메인으로 돌아가기 </a>
 </div>
-
+</body>

@@ -1,3 +1,7 @@
+<head>
+<link rel="stylesheet" type="text/css" href="/directory_css/style_black_white.css">
+</head>
+<body>
 <?php
 $input = '';
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -92,3 +96,4 @@ function findPosition ($wordPosition){
 ?>
 <a href = "alphabetical_Order.php"> 알파벳 순으로 보기. </a>
 <a href = "../../index.html"> 메인으로 돌아가기 </a>
+</body>
