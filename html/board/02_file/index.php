@@ -47,9 +47,9 @@
 		foreach($tableInfoArray as $row){
 			echo "<tr>";
 			foreach($row as $key => $value){
-				if($key === 'identification_number' || $key === 'title'){
-					printf("<td><a href = 'read_contents.php?id=%d&board_id=%d'>$value</a></td>",
-					$row['identification_number'],$board_id);
+				if($key === 'post_id' || $key === 'title'){
+					printf("<td><a href = 'read_contents.php?post_id=%d&board_id=%d'>$value</a></td>",
+					$row['post_id'],$board_id);
 				}else if($key === 'name'){
 					echo "<td>" . $value . "</td>"; //작성자 이름을 클릭하면 작성자 프로필이나 작성자가 적은 모든 게시물 보여줌. 
 				}else{
@@ -57,7 +57,7 @@
 				}
 				
 			}
-			echo printf("<td> <a href = 'content_delete_process.php?identification_number=%d&board_id=%d'>삭제</a> </td>", $row['identification_number'],$row['board_id']);
+			echo printf("<td> <a href = 'content_delete_process.php?post_id=%d&board_id=%d'>삭제</a> </td>", $row['post_id'],$row['board_id']);
 			echo "</tr>";
 	}
 	echo "</table>";

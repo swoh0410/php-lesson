@@ -4,7 +4,7 @@
 </head>
 <?php
 if($_SERVER['REQUEST_METHOD'] === 'GET'){
-	$id = $_GET["id"];
+	$post_id = $_GET["post_id"];
 	$board_id = $_GET["board_id"];
 }
 
@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
 	$dbname = 'SWOH';
 	$mysql_conn = get_mysql_connection($hostname,$username,$password,$dbname);
 	
-	$select_query = sprintf('SELECT * FROM SWOH.post WHERE identification_number = %d', $id);
+	$select_query = sprintf('SELECT * FROM SWOH.post WHERE post_id = %d', $post_id);
 	$result = mysqli_query($mysql_conn, $select_query);
 	
 	$number = '';
@@ -25,8 +25,8 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
 	$content = '';
 	
 	while($row = mysqli_fetch_assoc($result)){
-		echo 'Number: '. $row['identification_number']. '<br>';
-		$number = $row['identification_number'];
+		echo 'Number: '. $row['post_id']. '<br>';
+		$number = $row['post_id'];
 		echo 'Writer: '. $row['name'].'<br>';
 		$name = $row['name'];
 		echo 'Title: '. $row['title'].'<br>';

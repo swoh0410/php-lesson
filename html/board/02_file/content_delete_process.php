@@ -8,7 +8,7 @@
 
 <?php
 if($_SERVER['REQUEST_METHOD'] === "GET"){
-	$identification_number = $_GET["identification_number"];
+	$post_id = $_GET["post_id"];
 	$board_id = $_GET["board_id"];
 }
 
@@ -21,7 +21,7 @@ $username = 'SWOH';
 $password = 'password';
 $dbname = 'SWOH';
 $mysql_conn = get_mysql_connection($hostname,$username,$password,$dbname);
-row_delete($mysql_conn, $identification_number);
+row_delete($mysql_conn, $post_id);
 mysqli_close($mysql_conn);
 
 ?>

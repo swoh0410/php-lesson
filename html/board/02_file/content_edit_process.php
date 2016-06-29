@@ -6,12 +6,12 @@
 
 <?php
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-	$identification_number = $_POST['identification_number'];
+	$post_id = $_POST['post_id'];
 	$board_id = $_POST['board_id'];
 	$title = $_POST['title'];
 	$content = $_POST['content'];
 }
-echo "<br> identifi Num:" . $identification_number .
+echo "<br> identifi Num:" . $post_id .
 "<br> board_id:" . $board_id .		
 "<br> tittle:" . $title .	
 "<br> content:" . $content;
@@ -25,7 +25,7 @@ echo "<br> identifi Num:" . $identification_number .
 	$mysql_conn = get_mysql_connection($hostname,$username,$password,$dbname);
 
 	require_once('DB_Commands.php');
-	row_update($mysql_conn, $identification_number, $title, $content);
+	row_update($mysql_conn, $post_id, $title, $content);
 	
 	mysqli_close($mysql_conn);
 

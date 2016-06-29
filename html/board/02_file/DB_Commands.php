@@ -28,8 +28,8 @@
 
 
 	// content edit function
-	function row_update($conn, $identification_number, $title, $content){
-		$update_query = sprintf("UPDATE SWOH.post SET title = '%s', content = '%s' WHERE identification_number = %d;", $title, $content, $identification_number);
+	function row_update($conn, $post_id, $title, $content){
+		$update_query = sprintf("UPDATE SWOH.post SET title = '%s', content = '%s' WHERE post_id = %d;", $title, $content, $post_id);
 		$result = mysqli_query($conn, $update_query); //mysql 실행!
 		
 		if($result === false){
@@ -41,8 +41,8 @@
 	}
 	
 	
-	function row_delete($conn, $identification_number){
-		$delete_query = sprintf("DELETE FROM SWOH.post WHERE identification_number = %d;", $identification_number);
+	function row_delete($conn, $post_id){
+		$delete_query = sprintf("DELETE FROM SWOH.post WHERE post_id = %d;", $post_id);
 		$result = mysqli_query($conn, $delete_query);
 		
 		if($result === false){
