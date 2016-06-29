@@ -30,6 +30,7 @@ echo "<br> identifi Num:" . $identification_number .
 	mysqli_close($mysql_conn);
 
 ?>
+<br>
 <a href = "index.php?board_id=<?php echo $board_id?>"> 게시판으로 돌아가기 </a> <br>
 <a href = "../../index.html"> 메인으로 돌아가기 </a>
 </html>
