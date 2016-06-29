@@ -41,6 +41,25 @@
 	}
 	
 	
+	function row_delete($conn, $identification_number){
+		$delete_query = sprintf("DELETE FROM SWOH.post WHERE identification_number = %d;", $identification_number);
+		$result = mysqli_query($conn, $delete_query);
+		
+		if($result === false){
+			echo "게시글 삭제 도중 문제가 발생하였습니다. <br>"; 
+			mysqli_error($conn);
+		}else{
+			echo "글 삭제가 완료 되었습니다.. <br>";
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	/* 어떤 테이블이든 프린트 할 수 있는 메소드.
 	function table_print ($tableArray){
 		//Table을 만들기 시작.

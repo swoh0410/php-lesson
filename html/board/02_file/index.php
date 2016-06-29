@@ -57,6 +57,7 @@
 				}
 				
 			}
+			echo printf("<td> <a href = 'content_delete_process.php?identification_number=%d&board_id=%d'>삭제</a> </td>", $row['identification_number'],$row['board_id']);
 			echo "</tr>";
 	}
 	echo "</table>";
