@@ -24,7 +24,7 @@
 		mysqli_free_result($result);
 		return $tableArray;
 	}
-
+	
 
 
 	// content edit function
@@ -40,7 +40,7 @@
 		}
 	}
 	
-	
+	//content 삭제.
 	function row_delete($conn, $post_id){
 		$delete_query = sprintf("DELETE FROM SWOH.post WHERE post_id = %d;", $post_id);
 		$result = mysqli_query($conn, $delete_query);
@@ -52,16 +52,57 @@
 			echo "글 삭제가 완료 되었습니다.. <br>";
 		}
 	}
+	//글 적기. (포스팅이던, 댓글이던)
+	function insertDB($conn, $table, $cols){
+		$fields = "";
+		$values = "";
+		$number_of_fields = count($cols);
+		$counter = 1;
+		
+		foreach($cols as $key => $value){
+	
+			if($counter < $number_of_fields){
+				$fields = $fields . $key . ", ";
+				$values = $values ."\"" .$value . "\"". ", ";
+			}else{
+				$fields = $fields . $key;
+				$values = $values ."\"" .$value . "\"";
+			}
+		
+			$counter++;
+		}
+		echo " <br> TABLE: " . $table . "<br>"
+		."Fields: " . $fields . "<br>"
+		."Values: " . $values . "<br>";
+		$insert_query = sprintf('INSERT INTO %s (%s) VALUES (%s)', $table, $fields,$values);
+		
+		if(mysqli_query($conn, $insert_query) === false) {
+			echo mysqli_error ($conn);
+		}else{
+			echo 'DB INSERT 성공<br>';
+		}
+		
+	}
+	
+	function table_Read2($conn, $table, $fk_name, $fk_id){
+		$select_query = sprintf('SELECT * FROM %s WHERE %s = %d', $table, $fk_name, $fk_id);
+		$result = mysqli_query($conn, $select_query);
+		while(NULL !==($row = mysqli_fetch_assoc($result))) { // $result에서 한줄 읽어와서 $row에 넣는다.
+			$tableArray[] = $row; 
+		}
+		mysqli_free_result($result);
+		
+		if(isset($tableArray)){
+			return $tableArray;		
+		}else{
+			return NULL;
+
+		}
+
+	}
 	
 	
-	
-	
-	
-	
-	
-	
-	/* 어떤 테이블이든 프린트 할 수 있는 메소드.
-	function table_print ($tableArray){
+	function table_print ($tableArray, $board_id){
 		//Table을 만들기 시작.
 		//Table 헤더를 만드는 작업.
 		$headers = array_keys($tableArray[0]);
@@ -73,16 +114,19 @@
 		echo "</tr>";
 			foreach($tableArray as $row){
 				echo "<tr>";
-				foreach($row as $value){
+				foreach($row as $key => $value){
+					if($key === 'post_id'){
+						$post_id = $key;
+					}
 					echo "<td>" . $value . "</td>";
 				}
+				printf('<td><a href = "content delete_process.php?post_id=%s&board_id=%s"></td>',$post_id,$board_id);
 				echo "</tr>";
 		}
 		echo "</table>";
 	}
 
-	*/
 
-
+	
 
 ?>

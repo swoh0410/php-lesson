@@ -22,13 +22,16 @@
 	<form action="Update_DB.php" method="POST">
 		<table>
 			<tr> 
-				<td> NAME: </td> <td> <input type="text" name="name"> </td> 
+				<td> NAME: </td> 
+				<td> <input type="text" name="name"> </td> 
 			</tr>
 			<tr>
-				<td> Title: </td> <td> <input type = "text" name="title"> </td>
+				<td> Title: </td> 
+				<td> <input type = "text" name="title"> </td>
 			</tr>
 			<tr>
-				<td> Content: </td> <td> <input type = "text" name = "content"> </td>
+				<td> Content: </td> 
+				<td><textarea type = "text" name = "content" rows = "30" cols = "100"> </textarea> </td>
 			</tr>
 			<tr>
 				<td> <input type = "hidden" name = "board_id" value = "<?php echo $board_id?>"> </td>

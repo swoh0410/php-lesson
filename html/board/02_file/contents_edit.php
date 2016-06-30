@@ -6,7 +6,7 @@
 
 <?php
 if($_SERVER['REQUEST_METHOD'] === 'GET'){
-	$post_id = $_GET['number'];
+	$post_id = $_GET['post_id'];
 	$board_id = $_GET['board_id'];
 	$name = $_GET['name'];
 	$title = $_GET['title'];
@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
 		<tr> <td>글 번호:</td> <td><?php echo $post_id ?></td> </tr>
 		<tr> <td>작성자:</td> <td><?php echo $name?></td> </tr>
 		<tr> <td>글 제목:</td> <td><input type = "text" name = "title" value ="<?php echo $title?>"></td> </tr>
-		<tr> <td>내용:</td> <td><textarea type = "text" name = "content"><?php echo $content;?> </textarea></td> </tr>
+		<tr> <td>내용:</td> <td><textarea type = "text" name = "content" rows = "30" cols = "100"><?php echo $content;?> </textarea></td> </tr>
 		<tr> <td> <input type = "hidden" name = "post_id" value = "<?php echo $post_id?>">  </td> </tr>
 		<tr> <td> <input type = "hidden" name = "board_id" value = "<?php echo $board_id?>">  </td> </tr>
 	</table>

@@ -8,8 +8,8 @@
 
 <?php
 if($_SERVER['REQUEST_METHOD'] === "GET"){
-	$post_id = $_GET["post_id"];
-	$board_id = $_GET["board_id"];
+	$pk_id = $_GET["post_id"];
+	$fk_id = $_GET["board_id"];
 }
 
 REQUIRE_ONCE('DB_Commands.php');
@@ -21,7 +21,7 @@ $username = 'SWOH';
 $password = 'password';
 $dbname = 'SWOH';
 $mysql_conn = get_mysql_connection($hostname,$username,$password,$dbname);
-row_delete($mysql_conn, $post_id);
+row_delete($mysql_conn, $pk_id);
 mysqli_close($mysql_conn);
 
 ?>
@@ -29,5 +29,5 @@ mysqli_close($mysql_conn);
 </body>
 </html>
 
-<a href = "index.php?board_id=<?php echo $board_id?>"> 게시판으로 돌아가기 </a> <br>
+<a href = "index.php?board_id=<?php echo $fk_id?>"> 게시판으로 돌아가기 </a> <br>
 <a href = "../../index.html"> 메인으로 돌아가기 </a>
