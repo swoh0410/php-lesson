@@ -38,11 +38,30 @@
 		<table align = "left">
 			<tr> <th> JScript </th> </tr>
 		</table>
+		
+		<table align = "left">
+			<tr> <th> hangman test</th> </tr>
+			<tr> <td> <a href = "./hangman/html/index.php"> 게임 페이지 </a> </td></tr>
+		</table>
 
 	</div>
 
+<!--로그인 처리-->
+<?php
+	require_once('login/session.php');
+	start_session();
+	if(check_login()){
+?>
+	<h4>현재 로그인 되어 있는 상태입니다</h4>
+	<form action = "login/logout.php" method = "POST">
+		<input type = "submit" value = "로그아웃">
+	</form>
+<?php
+	} else{
+?>	
+	<h4> 로그인 하십시요. </h4>
 	<div style = "float:right;" >
-		<form action = "loginProcess.php">
+		<form action = "login/login.php" method = "POST">
 			<table style = "margin-bottom:10px;">
 			<tr>
 				<td> login: </td>
@@ -54,9 +73,18 @@
 			</tr>
 			</table>
 			<input type = "submit" value = "Log In">
+			<a href = "login/register_page.php">회원가입</a>
 			
 		</form>
 	</div>
+
+<?php
+	}
+?>
+	
 </div>
+
+
+	
 </body>
 

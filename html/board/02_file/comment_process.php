@@ -26,9 +26,9 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
 	require_once ('DB_Commands.php');
 	insertDB($mysql_conn, $table, $cols);
 	mysqli_close($mysql_conn);
-	
 ?>
 </body>
+<br>
 <a href = "read_contents.php?board_id=<?php echo $board_id?>&post_id=<?php echo $post_id?>">보던 글로 돌아가기</a> <br>
 <a href = "index.php?board_id=<?php echo $board_id?>">게시판으로 돌아가기</a> <br>
-<a href = "../../index.html">메인 홈으로 돌아가기</a>
+<a href = "/index.php">메인 홈으로 돌아가기</a>

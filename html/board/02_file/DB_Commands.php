@@ -1,5 +1,16 @@
 
 <?php
+	function db_swoh_conn(){
+		$connInfo = $_SERVER['DOCUMENT_ROOT'] . "/../" . "includes/" . "mylib.php";
+		require_once($connInfo);
+		$hostname = 'kocia.cytzyor3ndjk.ap-northeast-2.rds.amazonaws.com';
+		$username = 'SWOH';
+		$password = 'password';
+		$dbname = 'SWOH';
+		$mysql_conn = get_mysql_connection($hostname,$username,$password,$dbname);
+		
+		return $mysql_conn;
+	}
 
 	//DB에서 table을 읽어와서 Two-Dimentional Array 에 넣고 그 array를 Return. 
 	function table_read($conn, $tableName, $board_id = 0){
@@ -101,7 +112,6 @@
 
 	}
 	
-	
 	function table_print ($tableArray, $board_id){
 		//Table을 만들기 시작.
 		//Table 헤더를 만드는 작업.
@@ -126,6 +136,7 @@
 		echo "</table>";
 	}
 
+	
 
 	
 

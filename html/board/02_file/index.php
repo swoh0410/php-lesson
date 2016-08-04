@@ -76,4 +76,4 @@
 <br>
 
 <a href = "write_post.php?board_id=<?php echo $board_id?>"> 글쓰기 </a> <br>
-<a href = "../../index.html"> 메인으로 돌아가기 </a>
+<a href = "/index.php">메인 홈으로 돌아가기</a>
