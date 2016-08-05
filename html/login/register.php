@@ -9,7 +9,8 @@ if(isset($_POST['id'],  $_POST['password'])){
 	$hostname = 'kocia.cytzyor3ndjk.ap-northeast-2.rds.amazonaws.com';
 	$username = 'SWOH';
 	$dbname = 'SWOH';
-	$mysql_conn = get_mysql_connection($hostname,$username,$password,$dbname);
+	$db_password = 'password';
+	$mysql_conn = get_mysql_connection($hostname,$username,$db_password,$dbname);
 	$stmt = mysqli_prepare($mysql_conn, "SELECT pasword_hash FROM user_account WHERE id = ?");
 	mysqli_stmt_bind_param($stmt, "s", $id);
 	$result = mysqli_stmt_execute($stmt);
@@ -20,7 +21,6 @@ if(isset($_POST['id'],  $_POST['password'])){
 		$stmt = mysqli_prepare($mysql_conn, "INSERT INTO SWOH.user_account (user_id, password_hash) 
 			VALUES (?,?)");
 		$hash = password_hash($password, PASSWORD_DEFAULT);
-	
 		mysqli_stmt_bind_param($stmt, "ss", $id, $hash);
 		mysqli_stmt_execute($stmt);
 		header('Location: ../index.php');
